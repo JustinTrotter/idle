@@ -5,12 +5,14 @@ mod audio;
 mod loading;
 mod menu;
 mod player;
+mod utils;
 
 use crate::actions::ActionsPlugin;
 use crate::audio::InternalAudioPlugin;
 use crate::loading::LoadingPlugin;
 use crate::menu::MenuPlugin;
 use crate::player::PlayerPlugin;
+use crate::utils::FpsCounterPlugin;
 
 use bevy::app::App;
 #[cfg(debug_assertions)]
@@ -41,6 +43,7 @@ impl Plugin for GamePlugin {
             ActionsPlugin,
             InternalAudioPlugin,
             PlayerPlugin,
+            FpsCounterPlugin,
         ));
 
         #[cfg(debug_assertions)]
